@@ -1,7 +1,7 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
   return (
@@ -13,60 +13,68 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <div className={styles.wrapper}>
+          <div className={styles.logoGroup}>
+            <Image src="/logo.svg" alt="logo" width={48} height={48} />
+            <h3 className={styles.title}>Dashboard Kit</h3>
+          </div>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+          <div className={styles.description}>
+            <p className={styles.descriptionTitle}>Log In to Dashboard Kit</p>
+            <p className={styles.descriptionText}>
+              Enter your email and password below
             </p>
-          </a>
+          </div>
+
+          <form>
+            <div className={styles.formGroup}>
+              <div className={styles.inputGroup}>
+                <label className={styles.formLabel} htmlFor="email">
+                  EMAIL
+                </label>
+                <input
+                  className={styles.formInput}
+                  type="email"
+                  id="email"
+                  placeholder="Email address"
+                />
+              </div>
+
+              <div className={styles.inputGroup}>
+                <div className={styles.formPassword}>
+                  <label className={styles.formLabel} htmlFor="password">
+                    PASSWORD
+                  </label>
+                  <span>Forgot password?</span>
+                </div>
+                <input
+                  className={styles.formInput}
+                  type="password"
+                  id="password"
+                  placeholder="Enter your password"
+                />
+              </div>
+
+              <button className={styles.formButton} type="submit">
+                Log In
+              </button>
+            </div>
+          </form>
+
+          <div className={styles.footer}>
+            <p className={styles.footerText}>
+              Don’t have an account?{' '}
+              <a href="/signup" className={styles.footerLink}>
+                Sign up
+              </a>
+            </p>
+          </div>
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+      <footer className={styles.footer}></footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
