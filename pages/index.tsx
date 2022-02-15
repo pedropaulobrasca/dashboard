@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import { FaEye, FaEyeSlash, FaMailBulk, FaUser } from 'react-icons/fa';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
@@ -32,12 +33,15 @@ const Home: NextPage = () => {
                 <label className={styles.formLabel} htmlFor="email">
                   EMAIL
                 </label>
-                <input
-                  className={styles.formInput}
-                  type="email"
-                  id="email"
-                  placeholder="Email address"
-                />
+                <div className={styles.formInputDiv}>
+                  <input
+                    className={styles.formInput}
+                    type="email"
+                    id="email"
+                    placeholder="Email address"
+                  />
+                  <FaUser />
+                </div>
               </div>
 
               <div className={styles.inputGroup}>
@@ -47,12 +51,15 @@ const Home: NextPage = () => {
                   </label>
                   <span>Forgot password?</span>
                 </div>
-                <input
-                  className={styles.formInput}
-                  type="password"
-                  id="password"
-                  placeholder="Enter your password"
-                />
+                <div className={styles.formInputDiv}>
+                  <input
+                    className={styles.formInput}
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                  />
+                  <FaEyeSlash />
+                </div>
               </div>
 
               <button className={styles.formButton} type="submit">
